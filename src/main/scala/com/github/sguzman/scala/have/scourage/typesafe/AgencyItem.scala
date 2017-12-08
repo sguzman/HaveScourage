@@ -1,7 +1,7 @@
 package com.github.sguzman.scala.have.scourage.typesafe
 
 case class AgencyItem(
-                     id: String,
+                     id: Option[String],
                      account_type: String,
                      agency_id: Int,
                      agency_name: String,
@@ -9,7 +9,7 @@ case class AgencyItem(
                      center: Center,
                      city: String,
                      domain: String,
-                     incident_datasent: String,
+                     incident_datasent: Option[String],
                      state: String,
                      tipsoft_id: String,
                      zip: String,
