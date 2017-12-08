@@ -12,6 +12,8 @@ import io.circe.generic.auto._
 import scala.scalajs.js
 import scala.util.{Failure, Success}
 
+import scalatags.JsDom.all._
+
 object Main {
   var gmap: Option[google.maps.Map] = None
   def main(args: Array[String]): Unit = {
@@ -36,6 +38,26 @@ object Main {
           position = t._2,
           map = this.gmap.get
         )))
+
+        val zippedTwice = zipped.zip(markers)
+
+        zippedTwice foreach {t =>
+          val category = t._1._1.category
+          val marker = t._2
+          val content = div(
+            h1(category)
+          ).toString
+
+          val info = new google.maps.InfoWindow(google.maps.InfoWindowOptions(
+            content = content
+          ))
+
+          google.maps.event.addListener(marker, "click", () => {
+            println(s"Clicked on $t")
+            info.open(this.gmap.get, marker)
+          })
+        }
+
       case err: Failure[SimpleHttpResponse] => Console.err.println(err)
     })
   }
