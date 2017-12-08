@@ -18,7 +18,27 @@ object Main {
     .withQueryParameter("days", "sunday,monday,tuesday,wednesday,thursday,friday,saturday" )
     .withQueryParameter("end_date", "2017-12-07")
     .withQueryParameter("end_time", "23")
-    .withQueryParameter("incident_types", "Assault,Assault+with+Deadly+Weapon,Breaking+%26+Entering,Disorder,Drugs,Homicide,Kidnapping,Liquor,Other+Sexual+Offense,Property+Crime,Property+Crime+Commercial,Property+Crime+Residential,Quality+of+Life,Robbery,Sexual+Assault,Sexual+Offense,Theft,Theft+from+Vehicle,Theft+of+Vehicle")
+    .withQueryParameter("incident_types", "Assault,Assault" +
+      "+with" +
+      "+Deadly" +
+      "+Weapon,Breaking" +
+      "+%26" +
+      "+Entering,Disorder,Drugs,Homicide,Kidnapping,Liquor,Other" +
+      "+Sexual" +
+      "+Offense,Property" +
+      "+Crime,Property" +
+      "+Crime" +
+      "+Commercial,Property" +
+      "+Crime" +
+      "+Residential,Quality" +
+      "+of" +
+      "+Life,Robbery,Sexual" +
+      "+Assault,Sexual" +
+      "+Offense,Theft,Theft" +
+      "+from" +
+      "+Vehicle,Theft" +
+      "+of" +
+      "+Vehicle")
     .withQueryParameter("include_sex_offenders", "false")
     .withQueryParameter("lat1", "37.612055711412815")
     .withQueryParameter("lat2", "36.787291466820015")
